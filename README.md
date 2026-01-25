@@ -1,175 +1,118 @@
-# NexLogica🚚 NexLogica — Intelligent Logistics & Supply Chain Platform
+# NexLogica 🚚 Intelligent Logistics & Supply Chain Platform
 
-“Visibility. Trust. Optimization.”
-Formerly LogiChain360
+> "Visibility. Trust. Optimization."
 
-NexLogica is a full-stack, enterprise-grade logistics and supply chain management platform engineered for real-world deployment at scale. It combines real-time fleet tracking, blockchain-based escrow payments, AI-driven optimization, and role-based operational dashboards into a unified system.
+NexLogica is a **full-stack, enterprise-grade logistics and supply chain management platform** engineered for real-world deployment at scale. It combines real-time fleet tracking, blockchain-based escrow payments, AI-driven optimization, and role-based operational dashboards into a unified system.
 
 Built with production discipline, NexLogica is designed to serve as the core infrastructure for a commercial logistics SaaS, not a prototype.
 
-🌐 Live Platform Status
+## 🚧 Project Status
 
-🚧 Public demo deployment coming soon
-Current focus: system hardening, documentation, and production readiness.
+| Area | Status | Notes |
+| :--- | :--- | :--- |
+| **Public Demo** | Coming Soon | Current focus: system hardening, documentation, and production readiness. |
+| **Authentication & RBAC** | ✅ Complete | |
+| **Real-time tracking** | ✅ Complete | |
+| **Blockchain escrow** | ✅ Complete | |
+| **Input validation** | ✅ Complete | |
+| **Logging & monitoring** | ✅ Complete | |
+| **Test coverage** | ⚠️ Expanding | Increasing unit and integration test coverage. |
+| **Smart contract audit** | ⚠️ Planned | Formal security audit for smart contracts. |
+| **Load testing** | ⚠️ Pending | Performance testing under high load. |
 
-🎯 What NexLogica Solves
+---
 
-Modern logistics systems fail when visibility, trust, and coordination break down.
+## 🎯 Problem & Solution
 
-NexLogica addresses this by delivering:
+Modern logistics systems fail when visibility, trust, and coordination break down. NexLogica addresses this by delivering a platform that ensures **reliability, transparency, and scalability** for logistics operators, fleet managers, drivers, and enterprises.
 
-End-to-end shipment visibility
+**Key Solutions Delivered:**
 
-Real-time fleet intelligence
+*   **End-to-end shipment visibility:** Track every stage of the shipment lifecycle.
+*   **Real-time fleet intelligence:** High-frequency GPS telemetry and live vehicle maps.
+*   **Trustless payment settlement:** Automated, secure payments via blockchain escrow.
+*   **Operational insights:** Data-powered analytics for better decision-making.
+*   **Role-specific workflows:** Frictionless, tailored experiences for Admins, Managers, and Drivers.
 
-Trustless payment settlement
+## ✨ Core Capabilities
 
-Operational insights powered by data
+### 📡 Real-Time Fleet & Shipment Tracking
 
-Role-specific workflows without friction
+*   High-frequency GPS telemetry
+*   Live vehicle maps with status indicators
+*   Shipment lifecycle tracking from creation to delivery
+*   Route history & playback analytics
 
-The platform is designed for logistics operators, fleet managers, drivers, and enterprises that require reliability, transparency, and scalability.
+### 🔐 Blockchain-Based Escrow Payments
 
-✨ Core Capabilities
-📡 Real-Time Fleet & Shipment Tracking
+*   Trustless shipment escrow using smart contracts
+*   Pickup & delivery confirmations recorded on-chain
+*   Automatic payment release on delivery
+*   Immutable audit trail for all transactions
 
-High-frequency GPS telemetry
+**Blockchain Escrow Flow:**
+1.  Shipment created with defined price.
+2.  Sender deposits funds into escrow contract.
+3.  Driver confirms pickup (on-chain).
+4.  Driver confirms delivery with proof.
+5.  Smart contract releases payment.
+6.  Transaction permanently recorded.
 
-Live vehicle maps with status indicators
+This removes manual disputes, delays, and trust assumptions.
 
-Shipment lifecycle tracking from creation to delivery
+### 🤖 AI-Driven Intelligence
 
-Route history & playback analytics
+*   Route optimization for cost & time efficiency
+*   Demand surge forecasting (LSTM-ready)
+*   Delay risk detection & alerts
+*   Driver performance analytics
 
-🔐 Blockchain-Based Escrow Payments
+### 🧑‍💼 Role-Based Operations
 
-Trustless shipment escrow using smart contracts
+*   **Admin:** System health, fleet oversight, sustainability metrics.
+*   **Manager:** Shipment planning, driver allocation, optimization.
+*   **Driver:** Mobile-first delivery workflow (PWA).
 
-Pickup & delivery confirmations recorded on-chain
+### 🌱 Sustainability Intelligence
 
-Automatic payment release on delivery
+*   CO₂ emissions tracking
+*   Electric vs diesel fleet comparison
+*   Route efficiency impact
+*   Green logistics metrics (tokenization planned)
 
-Immutable audit trail for all transactions
+---
 
-🤖 AI-Driven Intelligence
+## 🧠 System Architecture
 
-Route optimization for cost & time efficiency
+The platform follows a service-oriented, stateless architecture with clear separation of concerns and production-ready patterns.
 
-Demand surge forecasting (LSTM-ready)
+### High-Level Flow
 
-Delay risk detection & alerts
+```mermaid
+graph TD
+    A[React Frontend (Web + PWA)] --> B(REST API & WebSocket Gateway);
+    B --> C(Core Services Layer);
+    C --> D(MongoDB + Redis + Polygon Blockchain);
+    C --> E(AI Service);
+    C --> F(Blockchain Service);
+```
 
-Driver performance analytics
+### Platform Modules
 
-🧑‍💼 Role-Based Operations
+| Module | Purpose |
+| :--- | :--- |
+| **Authentication** | Secure access & role control |
+| **Fleet Management** | Vehicle telemetry & status |
+| **Shipment Engine** | Lifecycle & assignment |
+| **GPS Service** | Real-time tracking & analytics |
+| **Blockchain Service** | Escrow & audit |
+| **AI Service** | Optimization & forecasting |
+| **Notifications** | In-app alerts |
+| **Simulation Engine** | Demo & testing workloads |
 
-Admin: system health, fleet oversight, sustainability metrics
+### Repository Structure
 
-Manager: shipment planning, driver allocation, optimization
-
-Driver: mobile-first delivery workflow (PWA)
-
-📱 Progressive Web App (PWA)
-
-Installable on Android & iOS
-
-Offline-tolerant workflows
-
-Background GPS tracking
-
-Camera & signature capture for proof of delivery
-
-🌱 Sustainability Intelligence
-
-CO₂ emissions tracking
-
-Electric vs diesel fleet comparison
-
-Route efficiency impact
-
-Green logistics metrics (tokenization planned)
-
-🧠 System Architecture
-React Frontend (Web + PWA)
-        ↓
-REST API & WebSocket Gateway
-        ↓
-Core Services Layer
-(Shipments, Fleet, GPS, Blockchain, AI)
-        ↓
-MongoDB + Redis + Polygon Blockchain
-
-
-The backend follows a service-oriented, stateless architecture with clear separation of concerns and production-ready patterns.
-
-🧩 Platform Modules
-Module	Purpose
-Authentication	Secure access & role control
-Fleet Management	Vehicle telemetry & status
-Shipment Engine	Lifecycle & assignment
-GPS Service	Real-time tracking & analytics
-Blockchain Service	Escrow & audit
-AI Service	Optimization & forecasting
-Notifications	In-app alerts
-Simulation Engine	Demo & testing workloads
-🛠️ Technology Stack
-Backend
-
-Node.js 18, Express.js
-
-MongoDB (Mongoose)
-
-Redis (caching & real-time state)
-
-Socket.IO
-
-JWT + bcrypt
-
-Stripe
-
-Winston & Morgan
-
-Helmet, CORS, Rate Limiting
-
-Frontend
-
-React 18 + Vite
-
-Redux Toolkit
-
-TailwindCSS
-
-Leaflet (maps)
-
-Recharts (analytics)
-
-Framer Motion
-
-React Hook Form
-
-Socket.IO Client
-
-i18next (i18n)
-
-Blockchain
-
-Solidity (0.8.x)
-
-Hardhat
-
-Polygon Amoy Testnet
-
-ethers.js
-
-AI / ML
-
-Python (Flask – planned)
-
-LSTM demand forecasting
-
-Route optimization algorithms
-
-📁 Repository Structure
+```
 NexLogica/
 ├── server/            # Express backend
 ├── client_new/        # React frontend (Vite)
@@ -178,69 +121,66 @@ NexLogica/
 ├── automation/        # CI/CD & health checks
 ├── scripts/           # Utilities
 └── docs/              # Technical documentation
+```
 
-🔌 API Design Overview
+---
 
-JWT-secured REST APIs
+## 🛠️ Technology Stack
 
-Role-based access control (RBAC)
+### Backend
 
-Schema-validated requests
+*   **Runtime:** Node.js 18, Express.js
+*   **Database:** MongoDB (Mongoose), Redis (caching & real-time state)
+*   **Real-time:** Socket.IO
+*   **Security:** JWT + bcrypt, Helmet, CORS, Rate Limiting
+*   **Payments:** Stripe
+*   **Logging:** Winston & Morgan
 
-Rate-limited endpoints
+### Frontend (Web & PWA)
 
-Public shipment tracking endpoints
+*   **Framework:** React 18 + Vite
+*   **State Management:** Redux Toolkit
+*   **Styling:** TailwindCSS
+*   **Mapping:** Leaflet
+*   **Analytics:** Recharts
+*   **UI/UX:** Framer Motion, React Hook Form
+*   **Real-time:** Socket.IO Client
+*   **Localization:** i18next (i18n)
+*   **PWA Features:** Installable on Android & iOS, Offline-tolerant workflows, Background GPS tracking, Camera & signature capture for proof of delivery.
 
-Real-time updates via Socket.IO
+### Blockchain
 
-Total: 30+ production-ready endpoints
+*   **Language:** Solidity (0.8.x)
+*   **Development:** Hardhat, ethers.js
+*   **Network:** Polygon Amoy Testnet
 
-🔄 Real-Time System
+### AI / ML
 
-GPS updates every 1–2 seconds
+*   **Framework:** Python (Flask – planned)
+*   **Models:** LSTM demand forecasting, Route optimization algorithms
 
-Live fleet maps across dashboards
+---
 
-Driver activity & delivery events
+## 🔐 Security Model
 
-Built-in simulator for 18 concurrent vehicles
+The platform is built with a security-first approach:
 
-🔗 Blockchain Escrow Flow
+*   **Authentication:** JWT authentication (30-day expiry).
+*   **Authorization:** Role-based access control (RBAC) middleware.
+*   **Data Security:** Bcrypt password hashing (cost factor 12).
+*   **API Protection:** Rate limiting (auth & general APIs), Input validation on all endpoints.
+*   **File Handling:** Secure file upload handling.
+*   **Secrets:** Environment-based secret management.
+*   **Blockchain Integration:** Blockchain transaction verification before DB updates.
 
-Shipment created with defined price
+## 🚀 Getting Started
 
-Sender deposits funds into escrow contract
+### ⚙️ Environment Configuration
 
-Driver confirms pickup (on-chain)
+You will need to set up environment variables for the backend. Create a `.env` file in the `server/` directory:
 
-Driver confirms delivery with proof
-
-Smart contract releases payment
-
-Transaction permanently recorded
-
-This removes manual disputes, delays, and trust assumptions.
-
-🔐 Security Model
-
-JWT authentication (30-day expiry)
-
-Role-based authorization middleware
-
-Bcrypt password hashing (cost factor 12)
-
-Rate limiting (auth & general APIs)
-
-Input validation on all endpoints
-
-Secure file upload handling
-
-Environment-based secret management
-
-Blockchain transaction verification before DB updates
-
-⚙️ Environment Configuration
-Backend (.env)
+```bash
+# Backend (.env)
 MONGODB_URI=mongodb://localhost:27017/logichain360
 PORT=5000
 JWT_SECRET=your_secret
@@ -248,74 +188,70 @@ CONTRACT_ADDRESS=0x...
 ALCHEMY_AMOY_URL=https://polygon-amoy.g.alchemy.com/v2/KEY
 PRIVATE_KEY=0x...
 CORS_ORIGIN=http://localhost:4028
+```
 
-Frontend
+The frontend runs on Vite dev server at port `4028` and is configured to proxy API requests to the backend.
 
-Vite dev server: 4028
+### Quick Start
 
-API proxy to backend
+Follow these steps to get the platform running locally:
 
-🚀 Quick Start
-Backend
+**1. Backend**
+```bash
 cd server
 npm install
 npm run dev
+```
 
-Frontend
+**2. Frontend**
+```bash
 cd client_new
 npm install
 npm run dev
+```
 
-Blockchain
+**3. Blockchain (Smart Contracts)**
+```bash
 cd blockchain
 npx hardhat compile
 npx hardhat run scripts/deploy.js --network amoy
+```
 
-🧪 Testing & Observability
+---
 
-Backend smoke tests
+## 🧪 Testing & Observability
 
-Smart contract tests (Hardhat + Chai)
+*   Backend smoke tests
+*   Smart contract tests (Hardhat + Chai)
+*   Structured logging (Winston)
+*   HTTP request logging (Morgan)
+*   Health-check endpoints
 
-Structured logging (Winston)
+## 🔮 Roadmap
 
-HTTP request logging (Morgan)
+### Platform Hardening
+*   Expanded automated testing
+*   Load & stress testing
+*   Smart contract audits
 
-Health-check endpoints
+### Intelligence Layer
+*   Advanced ML forecasting
+*   Predictive maintenance
+*   Dynamic pricing models
 
-📊 Production Readiness
-Area	Status
-Authentication & RBAC	✅
-Real-time tracking	✅
-Blockchain escrow	✅
-Input validation	✅
-Logging & monitoring	✅
-Test coverage	⚠️ Expanding
-Smart contract audit	⚠️ Planned
-Load testing	⚠️ Pending
-🔮 Roadmap
-Platform Hardening
+### Expansion
+*   Multi-chain blockchain support
+*   Native mobile apps
+*   IoT & cold-chain integrations
+*   BI dashboards & exports
 
-Expanded automated testing
+---
 
-Load & stress testing
+## 📞 Contact
 
-Smart contract audits
+**GitHub:** @RyanKeshary  
+**Email:** [ryankeshary@gmail.com](mailto:ryankeshary@gmail.com)
 
-Intelligence Layer
+---
 
-Advanced ML forecasting
-
-Predictive maintenance
-
-Dynamic pricing models
-
-Expansion
-
-Multi-chain blockchain support
-
-Native mobile apps
-
-IoT & cold-chain integrations
-
-BI dashboards & exports
+<a href="#-table-of-contents">⬆️ Back to Top</a>
