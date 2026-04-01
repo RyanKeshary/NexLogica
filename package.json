@@ -1,21 +1,33 @@
 {
-  "name": "logichain360",
+  "name": "nexlogica-monorepo",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "api/index.js",
   "engines": {
     "node": "18.x"
   },
   "dependencies": {
-    "socket.io-client": "^4.8.3",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-scripts": "5.0.1"
+    "axios": "^1.13.2",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "ethers": "^6.16.0",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.1.2",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.2",
+    "node-cron": "^4.2.1",
+    "redis": "^5.10.0",
+    "socket.io": "^4.8.3",
+    "stripe": "^20.1.0",
+    "uuid": "^13.0.0",
+    "winston": "^3.19.0",
+    "socket.io-client": "^4.8.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test"
+    "start": "node server/index.js",
+    "build": "cd client_new && npm install && npm run build",
+    "postinstall": "cd client_new && npm install && cd ../server && npm install"
   }
 }
-
-
